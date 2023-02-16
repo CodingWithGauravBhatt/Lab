@@ -1,10 +1,25 @@
-package Class;
+package Lab16feb;
 
-public class Question1 {
-	int a = 1;
-	public static void main(String[] args) {
-		//create an object
-		Question1 obj = new Question1();
-		System.out.println(obj.a);
+	class Arithmetic {
+	    public int add(int a, int b) {
+	        return a + b;
+	    }
 	}
-}
+
+	class Adder extends Arithmetic {
+	}
+
+	public class Question1  {
+	    public static void main(String[] args) {
+	        // create an instance of Adder
+	        Adder myAdder = new Adder();
+
+	        // call the add method on the Adder object
+	        int result = myAdder.add(5, 10);
+
+	        // print the result
+	        System.out.println(result);  // Output: 15
+	    }
+	}
+
+

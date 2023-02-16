@@ -1,39 +1,30 @@
-package Class;
+package Lab16feb;
 
-import java.util.Scanner;
+	class A {
+	    public void printA() {
+	        System.out.println("This is class A.");
+	    }
+	}
 
-public class Question2 {
-	public static void main (String args[]){
+	class B extends A {
+	    public void printB() {
+	        System.out.println("This is class B.");
+	    }
+	}
 
-		Scanner sc = new Scanner(System.in);
-		//create a scanner object for input
+	class C extends B {
+	    public void printC() {
+	        System.out.println("This is class C.");
+	    }
+	}
 
-		System.out.print("Enter the first number\n");
-		int num1=sc.nextInt();//reads num1 from user
-		
-		System.out.print("Enter the second number\n");
-		int num2=sc.nextInt();;//reads num2 from user
-		
-		System.out.print("Enter the Third number\n");
-		int num3=sc.nextInt();;//reads num3 from user
+	public class Question2 {
+	    public static void main(String[] args) {
+	        C obj = new C();
+	        obj.printA();  // Output: This is class A.
+	        obj.printB();  // Output: This is class B.
+	        obj.printC();  // Output: This is class C.
+	    }
+	}
 
-		//calling the method
-		findSmallest(num1,num2,num3);
 
-		}
-
-		static void findSmallest(int num1,int num2, int num3){//method definition
-		    if(num1<num2 && num1<num3){
-		        System.out.println(num1+" is the smallest number");
-		        
-		    }
-		    else if(num2<num1 && num2<num3){
-		        System.out.println(num2+" is the smallest number");
-		        
-		    }
-		    else{
-		        System.out.println(num3+" is the smallest number");
-		        
-		    }
-		}
-		}

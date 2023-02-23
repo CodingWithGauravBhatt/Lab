@@ -1,30 +1,26 @@
-package Lab16feb;
+package Today23Feb;
 
-	class A {
-	    public void printA() {
-	        System.out.println("This is class A.");
-	    }
+class Employee{
+	double IncreamentSalary  () {
+		return 0;
 	}
-
-	class B extends A {
-	    public void printB() {
-	        System.out.println("This is class B.");
-	    }
+}
+class Developer extends Employee{
+	double IncreamentSalary () {
+		return 8000.50;
 	}
-
-	class C extends B {
-	    public void printC() {
-	        System.out.println("This is class C.");
-	    }
+}
+class Manager extends Employee{
+	double IncreamentSalary () {
+		return 700.60;
 	}
-
-	public class Question2 {
-	    public static void main(String[] args) {
-	        C obj = new C();
-	        obj.printA();  // Output: This is class A.
-	        obj.printB();  // Output: This is class B.
-	        obj.printC();  // Output: This is class C.
-	    }
-	}
-
-
+}
+public class Question2 {
+public static void main(String[] args) {
+	Employee employee;
+	employee = new Developer();
+	System.out.println("Developer Increamented Salary ="+" "+employee.IncreamentSalary());
+	employee = new Manager();
+	System.out.println("Manager Increamented Salary ="+" "+employee.IncreamentSalary());
+}
+}

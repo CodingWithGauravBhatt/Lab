@@ -1,34 +1,23 @@
-package Today23Feb;
+package Today23Mar;
 
-class Bank {
-	double interstRate () {
-		return 0;
-	}
-}
-class sbi extends Bank{
-	double interstRate () {
-		return 0.08;
-	}
-}
-class icici extends Bank{
-	double interstRate () {
-		return 0.07;
-	}
-}
-class axis extends Bank{
-	double interstRate () {
-		return 0.09;
-	}
-}
+import java.util.*;
+
 public class Question1 {
-public static void main(String[] args) {
-	Bank bank;
-	bank = new sbi();
-	System.out.println("SBI Rate of Interst ="+" "+bank.interstRate());
-	bank = new icici();
-	System.out.println("ICICI Rate of Interst ="+" "+bank.interstRate());
-	bank = new axis();
-	System.out.println("AXIS Rate of Interst ="+" "+bank.interstRate());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x, y;
+        try {
+            x = sc.nextInt();
+            y = sc.nextInt();
+            if (y == 0) {
+                throw new ArithmeticException("/ by zero");
+            }
+            int result = x / y;
+            System.out.println(result);
+        } catch (InputMismatchException e) {
+            System.out.println("Input Mismatch Exception");
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
 }
-}
-

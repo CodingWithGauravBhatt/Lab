@@ -1,26 +1,23 @@
-package Today23Feb;
+package Today23Mar;
 
-class Employee{
-	double IncreamentSalary  () {
-		return 0;
-	}
-}
-class Developer extends Employee{
-	double IncreamentSalary () {
-		return 8000.50;
-	}
-}
-class Manager extends Employee{
-	double IncreamentSalary () {
-		return 700.60;
-	}
-}
+import java.util.*;
+
 public class Question2 {
-public static void main(String[] args) {
-	Employee employee;
-	employee = new Developer();
-	System.out.println("Developer Increamented Salary ="+" "+employee.IncreamentSalary());
-	employee = new Manager();
-	System.out.println("Manager Increamented Salary ="+" "+employee.IncreamentSalary());
-}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        try {
+            if (x < 0 || y < 0) {
+                throw new Exception("x and y should not be negative.");
+            } else if (x == 0 || y == 0) {
+                throw new Exception("x and y should not be zero.");
+            } else {
+                int product = x * y;
+                System.out.println(product);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

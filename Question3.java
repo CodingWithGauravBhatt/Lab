@@ -1,40 +1,24 @@
-package Today23Feb;
+package Today23Mar;
 
-class Sports{
-
-    String getName(){
-
-        return "Generic Sports";
-
-    }
-
-    void getNumberOfTeamMembers(){
-
-        System.out.println( "Each team has n players in " + getName() );
-
-    }
-
-}
-class Soccer extends Sports {
-
-    @Override
-    void getNumberOfTeamMembers() {
-        System.out.println("Each team has 11 players in " + getName());
-    }
-
-    @Override
-    String getName() {
-        return "Soccer Class";
-    }
-}
+import java.util.Scanner;
 
 public class Question3 {
-public static void main(String[] args) {
-	Sports game = new Sports();
-	System.out.println(game.getName());
-	game.getNumberOfTeamMembers();
-	Soccer game2 = new Soccer();
-	System.out.println(game2.getName());
-	game2.getNumberOfTeamMembers();
-}
+    public static int addTwoPositive() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (a <= 0 || b <= 0) {
+            throw new ArithmeticException("Non-positive integer sent");
+        }
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        try {
+            int sum = addTwoPositive();
+            System.out.println(sum);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

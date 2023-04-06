@@ -1,23 +1,22 @@
-package Today23Mar;
-
-import java.util.*;
+package Today6Apr;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Question2 {
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        int y = sc.nextInt();
-        try {
-            if (x < 0 || y < 0) {
-                throw new Exception("x and y should not be negative.");
-            } else if (x == 0 || y == 0) {
-                throw new Exception("x and y should not be zero.");
-            } else {
-                int product = x * y;
-                System.out.println(product);
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+        File file = new File("D:\\java12.txt");
+
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            byte[] bytesArray = new byte[(int) file.length()];
+            fileInputStream.read(bytesArray);
+            String fileContent = new String(bytesArray);
+
+            System.out.println("File content as byte array: " + bytesArray);
+            System.out.println("File content as string: " + fileContent);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
